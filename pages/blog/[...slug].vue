@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<Nav />
 		<main>
 			<div 
 				class="lg:space-x-10 px-[5%] lg:px-[10%] pt-5"
@@ -18,20 +17,20 @@
 			>
 				<div
 					v-if="blog.excerpt"
-					class="w-[300px] p-5 sticky top-3 border rounded-md bg-white hidden md:block"
+					class="w-[600px] p-5 sticky top-20 border rounded-md bg-white hidden lg:block"
 				>
-					<h2 class="text-sm font-bold mb-4">Table Of Contents</h2>
+					<h2 class="text-lg font-bold mb-4">หัวข้อ</h2>
 					<ul class="space-y-2">
 						<template v-for="(t, k) in toc" :key="`toc-item-${k}`">
 							<li>
 								<NuxtLink
 									:class="{
-										'text-sm ml-4': t.depth == 2,
+										'text-md  ml-4': t.depth == 2,
 										'text-[13px] ml-6': t.depth > 2,
 									}"
-									class="capitalize"
+									class="capitalize hover:text-violet-700"
 									:to="`#${t.id}`"
-									>{{ t.title }}</NuxtLink
+									>- {{ t.title }}</NuxtLink
 								>
 							</li>
 						</template>
@@ -39,7 +38,7 @@
 				</div>
 				<ClientOnly>
 					<ContentRenderer
-						class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link md:pl-4 max-w-none"
+						class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link max-w-none"
 						:value="blog"
 					>
 						<template #empty>
@@ -59,7 +58,6 @@
 	const { data: blog } = await useAsyncData(slug, () => {
 		return queryContent(slug).findOne();
 	});
-	console.log(blog);
 
 	const toc = computed(() => {
 		if (!blog.value) return [];

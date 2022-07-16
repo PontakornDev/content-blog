@@ -1,5 +1,5 @@
 <template>
-	<header class="flex items-center justify-between h-20 px-[5%] lg:px-[15%] bg-blue-500">
+	<header class="flex fixed z-10 items-center justify-between h-20 w-full px-[5%] lg:px-[15%] bg-blue-500">
 		<NuxtLink to="/" class="font-bold inline text-4xl lg:text-4xl">
 			<span class="text-primary">D</span>ev <span class="text-amber-600">L</span>earning
 		</NuxtLink>

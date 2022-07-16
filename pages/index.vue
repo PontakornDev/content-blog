@@ -1,6 +1,5 @@
 <template>
-	<div class="min-h-screen">
-		<Nav />
+	<div class="h-screen">
 		<main>
 			<section class="lg:px-[15%] px-[5%] pt-20">
 				<h1
