@@ -2,14 +2,24 @@
 	<div>
 		<Nav />
 		<main>
+			<div 
+				class="lg:space-x-10 px-[5%] lg:px-[10%] pt-5"
+			>
+				<div class="flex w-full border-b-2 border-gray-400 inline-block">
+					<Icon icon="mdi:calendar-range" width="24" height="24"/>
+					<p v-if="!blog.head.updateAt">เขียนเมื่อวันที่: {{blog.head.createAt}}</p>
+					<p v-else>อัพเดทเมื่อวันที่: {{blog.head.updateAt}}</p>
+					<Icon class="ml-5" icon="mdi:face-man-shimmer" width="24" height="24" />
+					<p> ผู้เขียน: {{blog.head.writer}}</p>
+				</div>
+			</div>
 			<article
-				class="lg:pt-20 pt-10 relative flex items-start lg:space-x-10 px-[5%] lg:px-[10%]"
+				class="lg:pt-10 pt-5 relative flex items-start lg:space-x-10 px-[5%] lg:px-[10%]"
 			>
 				<div
 					v-if="blog.excerpt"
-					class="w-[300px] p-5 sticky top-3 border rounded-md bg-white hidden lg:block"
+					class="w-[300px] p-5 sticky top-3 border rounded-md bg-white hidden md:block"
 				>
-				<!-- <p>{{createAt}}</p> -->
 					<h2 class="text-sm font-bold mb-4">Table Of Contents</h2>
 					<ul class="space-y-2">
 						<template v-for="(t, k) in toc" :key="`toc-item-${k}`">
@@ -29,7 +39,7 @@
 				</div>
 				<ClientOnly>
 					<ContentRenderer
-						class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link pr-7 max-w-none"
+						class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link md:pl-4 max-w-none"
 						:value="blog"
 					>
 						<template #empty>
@@ -43,6 +53,8 @@
 </template>
 
 <script setup>
+	import { Icon } from "@iconify/vue";
+
 	const slug = useRoute().params.slug.toString().replace(/,/g, "/");
 	const { data: blog } = await useAsyncData(slug, () => {
 		return queryContent(slug).findOne();
@@ -70,7 +82,13 @@
 
 	useHead({
 		title: `${blog.value.head.title}`,
-		meta: [{ name: "description", content: `${blog.value.description}` }],
+		meta: [
+			{ name: "description", content: `${blog.value.head.description}` },
+			{property: "og:title", content: `${blog.value.head.title}`},
+			{property: "og:description", content: `${blog.value.head.description}`},
+			{property: "twitter:title", content: `${blog.value.head.title}`},
+			{property: "twitter:description", content: `${blog.value.head.description}`}
+			],
 	});
 </script>
 

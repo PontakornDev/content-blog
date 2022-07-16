@@ -14,7 +14,7 @@
 						<span class="font-bold"> {{ n.name }}</span>
 					</div>
 					<div
-						class="h-0.5 w-4/5 bg-primary mt-1 -translate-y-full scale-0 group-hover:scale-100 group-hover:translate-y-full transition-all"
+						class="h-0.5 w-5/5 bg-primary mt-1 -translate-y-full scale-0 group-hover:scale-100 group-hover:translate-y-full transition-all"
 					></div>
 				</NuxtLink>
 			</template>
@@ -26,7 +26,7 @@
 	import { Icon } from "@iconify/vue";
 	const links = [
 		{
-			name: "Blog",
+			name: "Blog Posts",
 			icon: "carbon:blog",
 			link: "/",
 		},

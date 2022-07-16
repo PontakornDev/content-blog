@@ -63,6 +63,9 @@
 	});
 	useHead({
 		title: "Content Blog",
-		meta: [{ name: "description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ" }],
+		meta: [
+			{ name: "description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ" },
+			{property: "og:title", content: 'Dev Learning'}
+			],
 	});
 </script>
