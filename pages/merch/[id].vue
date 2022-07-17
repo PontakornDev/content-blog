@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<Nav />
 		<main>
 			<section class="lg:px-[10%] pt-10 px-[5%]">
 				<div class="flex relative items-start flex-col lg:flex-row gap-7">

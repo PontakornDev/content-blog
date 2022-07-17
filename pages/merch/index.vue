@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<Nav />
 		<main>
 			<section class="lg:px-[15%] px-[5%] pt-20">
 				<h1
