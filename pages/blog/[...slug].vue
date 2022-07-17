@@ -17,20 +17,22 @@
 			>
 				<div
 					v-if="blog.excerpt"
-					class="w-[600px] p-5 sticky top-20 border rounded-md bg-white hidden lg:block"
+					class="xl:w-[900px] lg:w-[1200px] p-5 sticky top-20 border rounded-md bg-white hidden lg:block"
 				>
-					<h2 class="text-lg font-bold mb-4">หัวข้อ</h2>
+					<h2 class="text-xl font-bold mb-4 underline underline-offset-4">หัวข้อ</h2>
 					<ul class="space-y-2">
 						<template v-for="(t, k) in toc" :key="`toc-item-${k}`">
 							<li>
 								<NuxtLink
 									:class="{
-										'text-md ml-4': t.depth == 2,
-										'text-[13px] ml-6': t.depth > 2,
+										'text-md font-bold ml-4 hover:text-violet-700': t.depth == 2,
+										'text-[13px] ml-6 hover:text-green-500': t.depth > 2,
 									}"
-									class="capitalize hover:text-violet-700"
+									class="capitalize"
 									:to="`#${t.id}`"
-									>- {{ t.title }}</NuxtLink
+									>
+									{{ t.depth == 2 ? "* "+t.title: "- "+t.title}}
+									</NuxtLink
 								>
 							</li>
 						</template>
