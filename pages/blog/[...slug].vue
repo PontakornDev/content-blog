@@ -13,7 +13,7 @@
 				</div>
 			</div>
 			<article
-				class="lg:pt-10 pt-5 relative flex items-start lg:space-x-10 px-[5%] lg:px-[10%]"
+				class="lg:pt-20 md:pt-12 pt-10 relative flex items-start lg:space-x-10 px-[5%] lg:px-[10%]"
 			>
 				<div
 					v-if="blog.excerpt"
@@ -25,7 +25,7 @@
 							<li>
 								<NuxtLink
 									:class="{
-										'text-md  ml-4': t.depth == 2,
+										'text-md ml-4': t.depth == 2,
 										'text-[13px] ml-6': t.depth > 2,
 									}"
 									class="capitalize hover:text-violet-700"
