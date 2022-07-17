@@ -84,14 +84,14 @@
 	useHead({
 		title: `${blog.value.head.title}`,
 		meta: [
-			{ name: "description", content: `'${blog.value.head.description}'` },
-			{property: "og:title", content: `'${blog.value.head.title}'`},
-			{property: "og:description", content: `'${blog.value.head.description}'`},
-			{property: "twitter:title", content: `'${blog.value.head.title}'`},
-			{property: "twitter:description", content: `'${blog.value.head.description}'`}
+			{ name: "description", content: `"${blog.value.head.description}"` },
+			{property: "og:title", content: `"${blog.value.head.title}"`},
+			{property: "og:description", content: `"${blog.value.head.description}"`},
+			{property: "twitter:title", content: `"${blog.value.head.title}"`},
+			{property: "twitter:description", content: `"${blog.value.head.description}"`}
 			],
 		link: [
-        {rel: "canonical", href: "https://www.devlearning.dev/"+`'${blog._value._path}'`}
+        {rel: "canonical", href: `"https://www.devlearning.dev/${blog._value._path}"`}
         ],
 	});
 </script>
