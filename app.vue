@@ -31,7 +31,7 @@ export default defineComponent ({
         {property: "twitter:image:height", content: "576"},
         {property: "twitter:image:type", content: "image/png"}
         ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/public/icon.png" }],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/icon.png" }],
     })
   },
 })
