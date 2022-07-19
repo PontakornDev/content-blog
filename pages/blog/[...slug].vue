@@ -62,6 +62,7 @@
 	});
 
 	const toc = computed(() => {
+		console.log(blog.value);
 		if (!blog.value) return [];
 		const items = blog.value.excerpt?.children;
 		
