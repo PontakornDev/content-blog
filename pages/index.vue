@@ -57,23 +57,22 @@
 </template>
 
 <script setup>
-	const route = useRoute()
 	const { data: blogNav } = await useAsyncData("navigation", () => {
 		return fetchContentNavigation(queryContent("blog"));
 	});
 	useHead({
 		title: "Content Blog",
 		meta: [
-			{ name: "keywords", content: `Dev Learning - ${route.meta.title}` },
+			{ name: "keywords", content: "Dev Learning - Content Blog" },
 			{ name: "description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ" },
-			{name: "og:title", content: `Dev Learning - ${route.meta.title}`},
+			{name: "og:title", content: "Dev Learning - Content Blog"},
 			{property: "og:description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ"},
 			{property: "og:locale", content: "th_TH"},
         	{property: "og:type", content: "website"},
 			{name: "og:image", content: "/icon.png"},
 			{property: "og:image:width", content: "500"},
 			{property: "og:image:height", content: "500"},
-			{name: "twitter:title", content: `Dev Learning - ${route.meta.title}`},
+			{name: "twitter:title", content: "Dev Learning - Content Blog"},
 			{property: "twitter:description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ"},
 			{property: "twitter:locale", content: "th_TH"},
         	{property: "twitter:type", content: "website"},
