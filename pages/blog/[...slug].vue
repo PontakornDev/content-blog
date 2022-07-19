@@ -6,10 +6,10 @@
 			>
 				<div class="flex w-full border-b-2 border-gray-400 inline-block">
 					<Icon icon="mdi:calendar-range" width="24" height="24"/>
-					<p v-if="!blog.head.updateAt">เขียนเมื่อวันที่: {{blog.head.createAt}}</p>
-					<p v-else>อัพเดทเมื่อวันที่: {{blog.head.updateAt}}</p>
+					<p v-if="!blog.updateAt">เขียนเมื่อวันที่: {{blog.createAt}}</p>
+					<p v-else>อัพเดทเมื่อวันที่: {{blog.updateAt}}</p>
 					<Icon class="ml-5" icon="mdi:face-man-shimmer" width="24" height="24" />
-					<p> ผู้เขียน: {{blog.head.writer}}</p>
+					<p> ผู้เขียน: {{blog.writer}}</p>
 				</div>
 			</div>
 			<article
@@ -62,7 +62,6 @@
 	});
 
 	const toc = computed(() => {
-		console.log(blog.value);
 		if (!blog.value) return [];
 		const items = blog.value.excerpt?.children;
 		
@@ -82,19 +81,19 @@
 	});
 
 	useHead({
-		title: `${blog.value.head.title}`,
+		title: `${blog.value.title}`,
 		meta: [
-			{ name: "keywords", content: `${blog.value.head.title}`,},
-			{ name: "description", content: `${blog.value.head.description}`,},
-			{name: "og:title", content: `Dev Learning - ${blog.value.head.title}`,},
-			{property: "og:description", content: `${blog.value.head.description}`,},
+			{ name: "keywords", content: `${blog.value.title}`,},
+			{ name: "description", content: `${blog.value.description}`,},
+			{name: "og:title", content: `Dev Learning - ${blog.value.title}`,},
+			{property: "og:description", content: `${blog.value.description}`,},
 			{property: "og:locale", content: "th_TH",},
         	{property: "og:type", content: "article",},
 			{property: "og:image", content: "/On-page-SEO.png",},
 			{property: "og:image:width", content: "700",},
 			{property: "og:image:height", content: "495",},
-			{name: "twitter:title", content: `Dev Learning - ${blog.value.head.title}`,},
-			{property: "twitter:description", content: `${blog.value.head.description}`,},
+			{name: "twitter:title", content: `Dev Learning - ${blog.value.title}`,},
+			{property: "twitter:description", content: `${blog.value.description}`,},
 			{property: "twitter:locale", content: "th_TH",},
         	{property: "twitter:type", content: "article",},
 			{property: "og:image", content: "/On-page-SEO.png",},
