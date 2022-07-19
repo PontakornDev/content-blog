@@ -63,25 +63,25 @@
 	useHead({
 		title: "Content Blog",
 		meta: [
-			{ name: "keywords", content: "Dev Learning - Content Blog" },
-			{ name: "description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ" },
-			{name: "og:title", content: "Dev Learning - Content Blog"},
-			{property: "og:description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ"},
-			{property: "og:locale", content: "th_TH"},
-        	{property: "og:type", content: "website"},
-			{property: "og:image", content: "/icon.png"},
-			{property: "og:image:width", content: "500"},
-			{property: "og:image:height", content: "500"},
-			{name: "twitter:title", content: "Dev Learning - Content Blog"},
-			{property: "twitter:description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ"},
-			{property: "twitter:locale", content: "th_TH"},
-        	{property: "twitter:type", content: "website"},
-			{property: "twitter:image", content: "/icon.png"},
-			{property: "twitter:image:width", content: "500"},
-			{property: "twitter:image:height", content: "500"},
+			{ name: "keywords", content: "Dev Learning - Content Blog",},
+			{ name: "description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",},
+			{hid: 'og:title', property: "og:title", content: "Dev Learning - Content Blog",},
+			{property: "og:description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",},
+			{property: "og:locale", content: "th_TH",},
+        	{property: "og:type", content: "website",},
+			{hid: 'og:image', property: "og:image", content: "/icon.png",},
+			{property: "og:image:width", content: "500",},
+			{property: "og:image:height", content: "500",},
+			{hid: 'twitter:title', property: "twitter:title", content: "Dev Learning - Content Blog",},
+			{property: "twitter:description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",},
+			{property: "twitter:locale", content: "th_TH",},
+        	{property: "twitter:type", content: "website",},
+			{hid: 'twitter:image', property: "twitter:image", content: "/icon.png",},
+			{property: "twitter:image:width", content: "500",},
+			{property: "twitter:image:height", content: "500",},
 			],
 		link: [
-			{rel: "canonical", href: "https://www.devlearning.dev"}
+			{rel: "canonical", href: "https://www.devlearning.dev",}
         ],
 	});
 </script>
