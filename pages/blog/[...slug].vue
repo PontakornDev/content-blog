@@ -57,9 +57,7 @@
 	import { Icon } from "@iconify/vue";
 
 	const slug = useRoute().params.slug.toString().replace(/,/g, "/");
-	const { data: blog } = await useAsyncData(slug, () => {
-		return queryContent(slug).findOne();
-	});
+	const { data: blog } = await useAsyncData(slug, () => queryContent(slug).findOne())
 
 	const toc = computed(() => {
 		if (!blog.value) return [];

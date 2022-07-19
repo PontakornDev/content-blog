@@ -11,9 +11,7 @@ import { defineComponent } from 'vue';
 export default defineComponent ({
   setup() {
     useHead({
-      titleTemplate: (title) => {
-        return `Dev Learning - ${title}`;
-      },
+      titleTemplate: (title) => `Dev Learning - ${title}`,
       title: "",
       meta: [
         { name: "keywords", content: "",},
