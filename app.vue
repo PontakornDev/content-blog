@@ -14,6 +14,7 @@ export default defineComponent ({
       titleTemplate: (title) => {
         return `Dev Learning - ${title}`;
       },
+      title: "",
       meta: [
         { name: "keywords", content: "",},
         { name: "description", content: "",},
