@@ -1,2 +1,2 @@
 /content/blog/*     /content/:splat
-/blog/*     /pages/blog/:splat
+/blog/*     :slug
