@@ -57,13 +57,14 @@
 </template>
 
 <script setup>
+	const route = useRoute()
 	const { data: blogNav } = await useAsyncData("navigation", () => {
 		return fetchContentNavigation(queryContent("blog"));
 	});
 	useHead({
 		title: "Content Blog",
 		meta: [
-			{ name: "keywords", content: "Dev Learning - Content Blog" },
+			{ name: "keywords", content: `Dev Learning - ${route.meta.title}` },
 			{ name: "description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ" },
 			{property: "og:title", content: "Dev Learning - Content Blog"},
 			{property: "og:description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ"},

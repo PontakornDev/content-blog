@@ -12,7 +12,9 @@ import { content } from './tailwind.config';
 export default defineComponent ({
   setup() {
     useHead({
-      titleTemplate: (title) => `Dev Learning - ${title}`,
+      titleTemplate: (title) => {
+        return `Dev Learning - ${title}`;
+      },
       meta: [
         { name: "keywords", content: "" },
         { name: "description", content: "" },
@@ -38,7 +40,7 @@ export default defineComponent ({
         {property: "twitter:type", content: ""},
         ],
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/icon.png" },
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         ],
     })
   },

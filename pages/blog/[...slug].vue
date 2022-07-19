@@ -84,17 +84,17 @@
 	useHead({
 		title: `${blog.value.head.title}`,
 		meta: [
-			{ name: "keywords", content: `"${blog.value.head.title}"` },
-			{ name: "description", content: `"${blog.value.head.description}"` },
-			{property: "og:title", content: `"${blog.value.head.title}"`},
-			{property: "og:description", content: `"${blog.value.head.description}"`},
+			{ name: "keywords", content: `${blog.value.head.title}` },
+			{ name: "description", content: `${blog.value.head.description}` },
+			{property: "og:title", content: `${blog.value.head.title}`},
+			{property: "og:description", content: `${blog.value.head.description}`},
 			{property: "og:locale", content: "th_TH"},
         	{property: "og:type", content: "article"},
 			{property: "og:image", content: "/On-page-SEO.png"},
 			{property: "og:image:width", content: "700"},
 			{property: "og:image:height", content: "495"},
-			{property: "twitter:title", content: `"${blog.value.head.title}"`},
-			{property: "twitter:description", content: `"${blog.value.head.description}"`},
+			{property: "twitter:title", content: `${blog.value.head.title}`},
+			{property: "twitter:description", content: `${blog.value.head.description}`},
 			{property: "twitter:locale", content: "th_TH"},
         	{property: "twitter:type", content: "article"},
 			{property: "og:image", content: "/On-page-SEO.png"},
@@ -103,7 +103,7 @@
 			
 			],
 		link: [
-        {rel: "canonical", href: `"https://www.devlearning.dev/${blog._value._path}"`}
+        {rel: "canonical", href: `https://www.devlearning.dev/${blog._value._path}`}
         ],
 	});
 </script>
