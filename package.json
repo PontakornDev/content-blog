@@ -4,11 +4,11 @@
     "node": "16.x"
   },
   "scripts": {
-    "build": "./node_modules/.bin/nuxt build",
     "dev": "nuxt dev",
-    "start": "./node_modules/.bin/nuxt start",
+    "build": "nuxt build",
+    "start": "nuxt start",
     "generate": "nuxt generate",
-    "heroku-postbuild": "yarn build"
+    "heroku-postbuild": "nuxt build"
   },
   "devDependencies": {
     "@iconify/vue": "^3.2.1",
