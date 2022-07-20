@@ -72,6 +72,7 @@
 			{hid: 'og:image', property: "og:image", content: "/icon.png",},
 			{property: "og:image:width", content: "500",},
 			{property: "og:image:height", content: "500",},
+			{property:"og:url", content:'https://www.devlearning.dev',},
 			{hid: 'twitter:title', property: "twitter:title", content: "Dev Learning - Content Blog",},
 			{property: "twitter:description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",},
 			{property: "twitter:locale", content: "th_TH",},
@@ -79,6 +80,7 @@
 			{hid: 'twitter:image', property: "twitter:image", content: "/icon.png",},
 			{property: "twitter:image:width", content: "500",},
 			{property: "twitter:image:height", content: "500",},
+			{property:"twitter:url", content:'https://www.devlearning.dev',},
 			],
 		link: [
 			{rel: "canonical", href: "https://www.devlearning.dev",}

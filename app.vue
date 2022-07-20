@@ -27,6 +27,7 @@ export default defineComponent ({
         {property: "og:image:type", content: "image/png",},
         {property: "og:locale", content: "",},
         {property: "og:type", content: "",},
+        {property:"og:url", content:"",},
         {property: "twitter:title", content: "",},
         {property: "twitter:sitename", content: "Dev Learning",},
         {property: "twitter:description", content: "",},
@@ -36,6 +37,7 @@ export default defineComponent ({
         {property: "twitter:image:type", content: "image/png",},
         {property: "twitter:locale", content: "",},
         {property: "twitter:type", content: "",},
+        {property:"twitter:url", content:"",},
         ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico",},
