@@ -94,9 +94,9 @@
 			{property: "twitter:description", content: `${blog.value.head.description}`,},
 			{property: "twitter:locale", content: "th_TH",},
         	{property: "twitter:type", content: "article",},
-			{property: "og:image", content: "/On-page-SEO.png",},
-			{property: "og:image:width", content: "700",},
-			{property: "og:image:height", content: "495",},
+			{property: "twitter:image", content: "/On-page-SEO.png",},
+			{property: "twitter:image:width", content: "700",},
+			{property: "twitter:image:height", content: "495",},
 			
 			],
 		link: [
