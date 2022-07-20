@@ -90,7 +90,7 @@
 			{hid: 'og:image', property: "og:image", content: "/On-Page-SEO.png",},
 			{property: "og:image:width", content: "700",},
 			{property: "og:image:height", content: "495",},
-			{property:"og:url", content:`https://www.devlearning.dev/${blog._value._path}`,},
+			{property:"og:url", content:`https://www.devlearning.dev${blog._value._path}`,},
 			{hid: 'twitter:title', property: "twitter:title", content: `Dev Learning - ${blog.value.head.title}`,},
 			{property: "twitter:description", content: `${blog.value.head.description}`,},
 			{property: "twitter:locale", content: "th_TH",},
@@ -98,10 +98,10 @@
 			{hid: 'twitter:image', property: "twitter:image", content: "/On-Page-SEO.png",},
 			{property: "twitter:image:width", content: "700",},
 			{property: "twitter:image:height", content: "495",},
-			{property:"twitter:url", content:`https://www.devlearning.dev/${blog._value._path}`,},
+			{property:"twitter:url", content:`https://www.devlearning.dev${blog._value._path}`,},
 			],
 		link: [
-			{rel: "canonical", href: `https://www.devlearning.dev/${blog._value._path}`,}
+			{rel: "canonical", href: `https://www.devlearning.dev${blog._value._path}`,}
         ],
 	});
 </script>
