@@ -6,7 +6,7 @@
   "scripts": {
     "build": "./node_modules/nuxt/bin/nuxt.mjs build -c ./nuxt.config.js",
     "dev": "nuxt dev",
-    "start": "./node_modules/nuxt/bin/nuxt.mjs start -c ./nuxt.config.js",
+    "start": "nuxt start",
     "generate": "nuxt generate",
     "heroku-postbuild": "yarn build"
   },
