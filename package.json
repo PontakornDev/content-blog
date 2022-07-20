@@ -1,10 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "node_modules/nuxt/bin/nuxt.js build -c ./nuxt.config.js",
     "dev": "nuxt dev",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "start": "node_modules/nuxt/bin/nuxt.js start -c ./nuxt.config.js",
+    "generate": "nuxt generate",
+    "heroku-postbuild": "yarn run build"
   },
   "devDependencies": {
     "@iconify/vue": "^3.2.1",
