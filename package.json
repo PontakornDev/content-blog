@@ -5,7 +5,7 @@
     "dev": "nuxt dev",
     "start": "node_modules/nuxt/bin/nuxt.js start -c ./nuxt.config.js",
     "generate": "nuxt generate",
-    "heroku-postbuild": "yarn run build"
+    "heroku-postbuild": "yarn build"
   },
   "devDependencies": {
     "@iconify/vue": "^3.2.1",
