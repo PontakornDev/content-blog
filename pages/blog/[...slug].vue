@@ -83,25 +83,27 @@
 		meta: [
 			{ name: "keywords", content: `${blog.value.head.title}`,},
 			{ name: "description", content: `${blog.value.head.description}`,},
-			{hid: 'og:title', property: "og:title", content: `Dev Learning - ${blog.value.head.title}`,},
+			{property: "og:title", content: `Dev Learning - ${blog.value.head.title}`,},
 			{property: "og:description", content: `${blog.value.head.description}`,},
 			{property: "og:locale", content: "th_TH",},
         	{property: "og:type", content: "article",},
-			{hid: 'og:image', property: "og:image", content: "/On-Page-SEO.png",},
+			{property: "og:image", content: `https://www.devlearning.dev/${blog.value.head.imgshr}`,},
 			{property: "og:image:width", content: "700",},
 			{property: "og:image:height", content: "495",},
-			{property:"og:url", content:`https://www.devlearning.dev${blog._value._path}`,},
-			{hid: 'twitter:title', property: "twitter:title", content: `Dev Learning - ${blog.value.head.title}`,},
+			{property: "og:image:alt", content: "DevLearning/article",},
+			{property:"og:url", content:`https://www.devlearning.dev/blog${blog._value._path}`,},
+			{property: "twitter:title", content: `Dev Learning - ${blog.value.head.title}`,},
 			{property: "twitter:description", content: `${blog.value.head.description}`,},
 			{property: "twitter:locale", content: "th_TH",},
         	{property: "twitter:type", content: "article",},
-			{hid: 'twitter:image', property: "twitter:image", content: "/On-Page-SEO.png",},
+			{property: "twitter:image", content: `https://www.devlearning.dev/${blog.value.head.imgshr}`,},
 			{property: "twitter:image:width", content: "700",},
 			{property: "twitter:image:height", content: "495",},
-			{property:"twitter:url", content:`https://www.devlearning.dev${blog._value._path}`,},
+			{property: "twitter:image:alt", content: "DevLearning/article",},
+			{property:"twitter:url", content:`https://www.devlearning.dev/blog${blog._value._path}`,},
 			],
 		link: [
-			{rel: "canonical", href: `https://www.devlearning.dev${blog._value._path}`,}
+			{rel: "canonical", href: `https://www.devlearning.dev/blog${blog._value._path}`,}
         ],
 	});
 </script>
