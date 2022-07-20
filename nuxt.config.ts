@@ -14,5 +14,4 @@ export default defineNuxtConfig({
 			theme: "dracula-soft",
 		},
 	},
-	target: "static",
 });
