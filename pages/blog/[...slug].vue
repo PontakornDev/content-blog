@@ -76,7 +76,7 @@
 			}
 		});
 		return toc;
-	});
+	})
 
 	useHead({
 		title: `${blog.value.head.title}`,
@@ -100,7 +100,7 @@
 			
 			],
 		link: [
-        {rel: "canonical", href: `https://www.devlearning.dev/${blog._value._path}`,}
+			{rel: "canonical", href: `https://www.devlearning.dev/${blog._value._path}`,}
         ],
 	});
 </script>
