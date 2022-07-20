@@ -1,4 +1,3 @@
-import { serverQueryContent } from "#content/server";
 import { defineNuxtConfig } from "nuxt";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
