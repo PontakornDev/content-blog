@@ -4,9 +4,9 @@
     "node": "16.x"
   },
   "scripts": {
-    "build": "./node_modules/nuxt/bin/nuxt.js build -c ./nuxt.config.js",
+    "build": "./node_modules/nuxt/bin/nuxt.mjs build -c ./nuxt.config.js",
     "dev": "nuxt dev",
-    "start": "./node_modules/nuxt/bin/nuxt.js start -c ./nuxt.config.js",
+    "start": "./node_modules/nuxt/bin/nuxt.mjs start -c ./nuxt.config.js",
     "generate": "nuxt generate",
     "heroku-postbuild": "yarn build"
   },
