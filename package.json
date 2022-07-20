@@ -5,10 +5,10 @@
   },
   "scripts": {
     "dev": "nuxt dev",
-    "build": "node_modules/nuxt/bin/nuxt.js build -c ./nuxt.config.js",
-    "start": "node_modules/nuxt/bin/nuxt.js start -c ./nuxt.config.js",
+    "build": "nuxt build",
+    "start": "nuxt start",
     "generate": "nuxt generate",
-    "heroku-postbuild": "npm install && npm run build"
+    "heroku-postbuild": "nuxt build"
   },
   "devDependencies": {
     "@iconify/vue": "^3.2.1",
