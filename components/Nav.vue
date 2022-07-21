@@ -1,6 +1,6 @@
 <template>
 	<header class="flex sticky z-10 top-0 items-center justify-between h-20 w-full px-[5%] lg:px-[15%] bg-blue-500">
-		<NuxtLink to="/" class="font-bold inline text-4xl lg:text-4xl">
+		<NuxtLink to="/" class="font-bold inline text-xl md:text-4xl">
 			<span class="text-primary">D</span>ev <span class="text-amber-600">L</span>earning
 		</NuxtLink>
 		<nav class="flex items-center space-x-7 text-gray-600">
