@@ -17,9 +17,9 @@
 			>
 				<div
 					v-if="blog.excerpt"
-					class="xl:w-[900px] lg:w-[1200px] p-5 sticky top-20 border rounded-md bg-white hidden lg:block"
+					class="w-[300px] p-5 sticky top-20 border rounded-md bg-white hidden lg:block"
 				>
-					<h2 class="text-xl font-bold mb-4 underline underline-offset-4">หัวข้อ</h2>
+					<h2 class="w-[300px] text-xl font-bold mb-4 underline underline-offset-4">Table of Content</h2>
 					<ul class="space-y-2">
 						<template v-for="(t, k) in toc" :key="`toc-item-${k}`">
 							<li>
