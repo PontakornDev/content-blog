@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 		},
 	},
 	sitemap: {
-		hostname: 'http://localhost:3000',
+		hostname: 'https://www.devlearning.dev',
 	},
 	ssr: true,
 	target: "server",
