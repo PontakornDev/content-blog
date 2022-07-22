@@ -7,6 +7,11 @@
 				>
 					Check Out Our Latest Blog Posts
 				</h1>
+				<h2
+					class="lg:text-2xl text-xl text-center leading-normal font-bold rainbow-text"
+				>
+					(Dev Learning - เป็นเว็บไซต์พัฒนาขึ้นเพื่อแบ่งปันความรู้)
+				</h2>
 			</section>
 			<section class="lg:px-[15%] px-[5%] lg:pt-20 pt-14">
 				<p
