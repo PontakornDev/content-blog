@@ -40,7 +40,7 @@
 				</div>
 				<ClientOnly>
 					<ContentRenderer
-						class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link max-w-none"
+						class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link md:max-w-none"
 						:value="blog"
 					>
 						<template #empty>
@@ -81,7 +81,6 @@
 	useHead({
 		title: `${blog.value.head.title}`,
 		meta: [
-			{ name: "keywords", content: `${blog.value.head.title}`,},
 			{ name: "description", content: `${blog.value.head.description}`,},
 			{property: "og:title", content: `Dev Learning - ${blog.value.head.title}`,},
 			{property: "og:description", content: `${blog.value.head.description}`,},
