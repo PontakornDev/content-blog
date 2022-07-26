@@ -31,3 +31,9 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
 	opacity: 0;
 	transform: scale(0.99);
 }
+
+pre{
+	@media (max-width: 375px) { 
+		max-width: 300px;
+	}
+}
