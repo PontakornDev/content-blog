@@ -17,9 +17,9 @@
 			>
 				<div
 					v-if="blog.excerpt"
-					class="xl:w-[900px] lg:w-[1200px] p-5 sticky top-20 border rounded-md bg-white hidden lg:block"
+					class="w-[300px] p-5 sticky top-20 border rounded-md bg-white hidden lg:block"
 				>
-					<h2 class="text-xl font-bold mb-4 underline underline-offset-4">หัวข้อ</h2>
+					<h2 class="w-[300px] text-xl font-bold mb-4 underline underline-offset-4">Table of Content</h2>
 					<ul class="space-y-2">
 						<template v-for="(t, k) in toc" :key="`toc-item-${k}`">
 							<li>
@@ -40,7 +40,7 @@
 				</div>
 				<ClientOnly>
 					<ContentRenderer
-						class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link max-w-none"
+						class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link max-w-sm md:max-w-none"
 						:value="blog"
 					>
 						<template #empty>
@@ -81,13 +81,12 @@
 	useHead({
 		title: `${blog.value.head.title}`,
 		meta: [
-			{ name: "keywords", content: `${blog.value.head.title}`,},
 			{ name: "description", content: `${blog.value.head.description}`,},
 			{property: "og:title", content: `Dev Learning - ${blog.value.head.title}`,},
 			{property: "og:description", content: `${blog.value.head.description}`,},
 			{property: "og:locale", content: "th_TH",},
         	{property: "og:type", content: "article",},
-			{property: "og:image", content: `https://www.devlearning.dev/${blog.value.head.imgshr}`,},
+			{property: "og:image", content: `https://www.devlearning.dev/upload/img_blog/${blog.value.head.imgshr}`,},
 			{property: "og:image:width", content: "700",},
 			{property: "og:image:height", content: "495",},
 			{property: "og:image:alt", content: "DevLearning/article",},
@@ -96,7 +95,7 @@
 			{property: "twitter:description", content: `${blog.value.head.description}`,},
 			{property: "twitter:locale", content: "th_TH",},
         	{property: "twitter:type", content: "article",},
-			{property: "twitter:image", content: `https://www.devlearning.dev/${blog.value.head.imgshr}`,},
+			{property: "twitter:image", content: `https://www.devlearning.dev/upload/img_blog/${blog.value.head.imgshr}`,},
 			{property: "twitter:image:width", content: "700",},
 			{property: "twitter:image:height", content: "495",},
 			{property: "twitter:image:alt", content: "DevLearning/article",},

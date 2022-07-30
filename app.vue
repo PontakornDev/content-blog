@@ -1,5 +1,5 @@
 <template>
-  <div class="dark:bg-[#0c0c0c] dark:text-white">
+  <div class="dark:bg-[#0c0c0c] dark:text-white body">
     <Nav />
     <NuxtPage class="relative" />
     <Footer />
@@ -14,7 +14,6 @@ export default defineComponent ({
       titleTemplate: (title) => `Dev Learning - ${title}`,
       title: "",
       meta: [
-        { name: "keywords", content: "",},
         { name: "description", content: "",},
         {name: "robots", content:"index, follow",},
         {"http-equiv": "Content-Type", content:"text/html; charset=utf-8",},

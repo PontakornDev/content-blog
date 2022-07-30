@@ -1,5 +1,5 @@
 <template>
-	<div class="h-screen">
+	<div >
 		<main>
 			<section class="lg:px-[15%] px-[5%] pt-20">
 				<h1
@@ -7,6 +7,11 @@
 				>
 					Check Out Our Latest Blog Posts
 				</h1>
+				<h2
+					class="lg:text-2xl text-xl text-center leading-normal font-bold rainbow-text"
+				>
+					(Dev Learning - เป็นเว็บไซต์พัฒนาเพื่อแบ่งปันความรู้)
+				</h2>
 			</section>
 			<section class="lg:px-[15%] px-[5%] lg:pt-20 pt-14">
 				<p
@@ -63,7 +68,6 @@
 	useHead({
 		title: "Content Blog",
 		meta: [
-			{ name: "keywords", content: "Dev Learning - Content Blog",},
 			{ name: "description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",},
 			{property: "og:title", content: "Dev Learning - Content Blog",},
 			{property: "og:description", content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",},
