@@ -5,8 +5,7 @@ export default defineNuxtConfig({
 	modules: [
 		"@nuxt/content", 
 		"@nuxtjs/tailwindcss",
-		'@nuxtjs/sitemap',
-		'~/modules/sitemap'
+		'@nuxtjs/sitemap'
 	],
 	content: {
 		markdown: {
@@ -18,9 +17,6 @@ export default defineNuxtConfig({
 		highlight: {
 			theme: "dracula-soft",
 		},
-	},
-	sitemap: {
-		hostname: 'https://www.devlearning.dev',
 	},
 	ssr: true,
 	target: "server",
