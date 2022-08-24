@@ -87,7 +87,7 @@
 
 	const shareFB = () => {
 		const url = `https://www.devlearning.dev/blog${blog._value._path}`
-		window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+		window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`,
         'facebook-share-dialog',
         'width=800,height=600'
     );
