@@ -6,8 +6,7 @@
 			>
 				<div class="flex w-full border-b-2 border-gray-400 inline-block">
 					<Icon icon="mdi:calendar-range" width="24" height="24"/>
-					<p v-if="!blog.head.updateAt">เขียนเมื่อวันที่: {{blog.head.createAt}}</p>
-					<p v-else>อัพเดทเมื่อวันที่: {{blog.head.updateAt}}</p>
+					<p>เขียนเมื่อวันที่: {{blog.head.createAt}}</p>
 					<Icon class="ml-2 md:ml-5" icon="mdi:face-man-shimmer" width="24" height="24" />
 					<p> ผู้เขียน: {{blog.head.writer}}</p>
 					<button 
@@ -20,7 +19,7 @@
 				</div>
 			</div>
 			<article
-				class="lg:pt-20 md:pt-12 pt-10 relative flex items-start lg:space-x-10 px-[5%] lg:px-[10%]"
+				class="lg:pt-20 md:pt-12 pt-10 flex items-start lg:space-x-10 px-[5%] lg:px-[10%]"
 			>
 				<div
 					v-if="blog.excerpt"
@@ -28,7 +27,7 @@
 				>
 					<h2 class="w-[300px] text-xl font-bold mb-4 underline underline-offset-4">Table of Content</h2>
 					<ul class="space-y-2">
-						<template v-for="(t, k) in toc" :key="`toc-item-${k}`">
+						<template v-for="(t, ) in toc" :key="`toc-item-${k}`">
 							<li>
 								<NuxtLink
 									:class="{
@@ -47,7 +46,8 @@
 				</div>
 				<ClientOnly>
 					<ContentRenderer
-						class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link max-w-sm md:max-w-none"
+						class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link 
+						max-w-sm md:max-w-none prose-pre:whitespace-normal"
 						:value="blog"
 					>
 						<template #empty>
