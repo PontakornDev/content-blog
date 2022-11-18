@@ -10,7 +10,7 @@
 				<h2
 					class="lg:text-2xl text-xl text-center leading-normal font-bold rainbow-text"
 				>
-					(Dev Learning เป็นเว็บไซต์พัฒนาเพื่อแบ่งปันความรู้)
+					Web blog to Learning and Development
 				</h2>
 			</section>
 			<section class="lg:px-[15%] px-[5%] lg:pt-20 pt-14">
