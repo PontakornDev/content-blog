@@ -1,20 +1,20 @@
-import { serverQueryContent } from '#content/server'
-import { SitemapStream, streamToPromise } from 'sitemap'
+import { serverQueryContent } from "#content/server";
+import { SitemapStream, streamToPromise } from "sitemap";
 
 export default defineEventHandler(async (event) => {
   // Fetch all documents
-  const docs = await serverQueryContent(event).find()
+  const docs = await serverQueryContent(event).find();
   const sitemap = new SitemapStream({
-    hostname: 'https://www.devlearning.dev'
-  })
+    hostname: "https://www.devpai.netlify.app",
+  });
 
   for (const doc of docs) {
     sitemap.write({
-      url: '/blog'+doc._path,
-      changefreq: 'monthly'
-    })
+      url: "/blog" + doc._path,
+      changefreq: "monthly",
+    });
   }
-  sitemap.end()
+  sitemap.end();
 
-  return streamToPromise(sitemap)
-})
+  return streamToPromise(sitemap);
+});
