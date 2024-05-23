@@ -115,7 +115,7 @@ useHead({
     { name: "description", content: `${blog.value.head.description}` },
     {
       property: "og:title",
-      content: `Young DEV - ${blog.value.head.title}`,
+      content: `DEV PAI - ${blog.value.head.title}`,
     },
     { property: "og:description", content: `${blog.value.head.description}` },
     { property: "og:locale", content: "th_TH" },
@@ -133,7 +133,7 @@ useHead({
     },
     {
       property: "twitter:title",
-      content: `Young DEV - ${blog.value.head.title}`,
+      content: `DEV PAI - ${blog.value.head.title}`,
     },
     {
       property: "twitter:description",
