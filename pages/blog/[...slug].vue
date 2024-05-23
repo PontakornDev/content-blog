@@ -126,7 +126,7 @@ useHead({
     },
     { property: "og:image:width", content: "700" },
     { property: "og:image:height", content: "495" },
-    { property: "og:image:alt", content: "DevLearning/article" },
+    { property: "og:image:alt", content: "DEVPAI/article" },
     {
       property: "og:url",
       content: `https://devpai.netlify.app/blog${blog._value._path}`,
@@ -147,7 +147,7 @@ useHead({
     },
     { property: "twitter:image:width", content: "700" },
     { property: "twitter:image:height", content: "495" },
-    { property: "twitter:image:alt", content: "DevLearning/article" },
+    { property: "twitter:image:alt", content: "DEVPAI/article" },
     {
       property: "twitter:url",
       content: `https://devpai.netlify.app/blog${blog._value._path}`,

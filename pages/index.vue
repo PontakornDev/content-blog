@@ -81,7 +81,7 @@ useHead({
     },
     { property: "og:image:width", content: "500" },
     { property: "og:image:height", content: "500" },
-    { property: "og:image:alt", content: "DevLearning/website " },
+    { property: "og:image:alt", content: "DEVPAI/website " },
     { property: "og:url", content: "https://devpai.netlify.app" },
     { property: "twitter:title", content: "DEV PAI - Content Blog" },
     {
@@ -96,7 +96,7 @@ useHead({
     },
     { property: "twitter:image:width", content: "500" },
     { property: "twitter:image:height", content: "500" },
-    { property: "twitter:image:alt", content: "DevLearning/website " },
+    { property: "twitter:image:alt", content: "DEVPAI/website " },
     { property: "twitter:url", content: "https://devpai.netlify.app" },
   ],
   link: [{ rel: "canonical", href: "https://devpai.netlify.app" }],
