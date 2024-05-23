@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   // Fetch all documents
   const docs = await serverQueryContent(event).find();
   const sitemap = new SitemapStream({
-    hostname: "https://www.devpai.netlify.app",
+    hostname: "https://devpai.netlify.app",
   });
 
   for (const doc of docs) {

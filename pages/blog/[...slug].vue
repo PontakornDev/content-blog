@@ -100,7 +100,7 @@ const toc = computed(() => {
 });
 
 const shareFB = () => {
-  const url = `https://www.devpai.netlify.app/blog${blog._value._path}`;
+  const url = `https://devpai.netlify.app/blog${blog._value._path}`;
   window.open(
     `https://www.facebook.com/sharer/sharer.php?u=${url}`,
     "facebook-share-dialog",
@@ -122,14 +122,14 @@ useHead({
     { property: "og:type", content: "article" },
     {
       property: "og:image",
-      content: `https://www.devpai.netlify.app/upload/img_blog/${blog.value.head.imgshr}`,
+      content: `https://devpai.netlify.app/upload/img_blog/${blog.value.head.imgshr}`,
     },
     { property: "og:image:width", content: "700" },
     { property: "og:image:height", content: "495" },
     { property: "og:image:alt", content: "DevLearning/article" },
     {
       property: "og:url",
-      content: `https://www.devpai.netlify.app/blog${blog._value._path}`,
+      content: `https://devpai.netlify.app/blog${blog._value._path}`,
     },
     {
       property: "twitter:title",
@@ -143,20 +143,20 @@ useHead({
     { property: "twitter:type", content: "article" },
     {
       property: "twitter:image",
-      content: `https://www.devpai.netlify.app/upload/img_blog/${blog.value.head.imgshr}`,
+      content: `https://devpai.netlify.app/upload/img_blog/${blog.value.head.imgshr}`,
     },
     { property: "twitter:image:width", content: "700" },
     { property: "twitter:image:height", content: "495" },
     { property: "twitter:image:alt", content: "DevLearning/article" },
     {
       property: "twitter:url",
-      content: `https://www.devpai.netlify.app/blog${blog._value._path}`,
+      content: `https://devpai.netlify.app/blog${blog._value._path}`,
     },
   ],
   link: [
     {
       rel: "canonical",
-      href: `https://www.devpai.netlify.app/blog${blog._value._path}`,
+      href: `https://devpai.netlify.app/blog${blog._value._path}`,
     },
   ],
 });
