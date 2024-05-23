@@ -9,14 +9,14 @@
 export default defineComponent({
   setup() {
     useHead({
-      titleTemplate: (title: string) => `Dev Learning - ${title}`,
+      titleTemplate: (title: string) => `Young DEV - ${title}`,
       title: "",
       meta: [
         { name: "description", content: "" },
         { name: "robots", content: "index, follow" },
         { "http-equiv": "Content-Type", content: "text/html; charset=utf-8" },
         { property: "og:title", content: "" },
-        { property: "og:sitename", content: "Dev Learning" },
+        { property: "og:sitename", content: "Young DEV" },
         { property: "og:description", content: "" },
         { property: "og:image", content: "" },
         { property: "og:image:width", content: "" },
@@ -27,7 +27,7 @@ export default defineComponent({
         { property: "og:type", content: "" },
         { property: "og:url", content: "" },
         { property: "twitter:title", content: "" },
-        { property: "twitter:sitename", content: "Dev Learning" },
+        { property: "twitter:sitename", content: "Young DEV" },
         { property: "twitter:description", content: "" },
         { property: "twitter:image", content: "" },
         { property: "twitter:image:width", content: "" },

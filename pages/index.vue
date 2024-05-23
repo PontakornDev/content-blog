@@ -68,7 +68,7 @@ useHead({
       name: "description",
       content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",
     },
-    { property: "og:title", content: "Dev Learning - Content Blog" },
+    { property: "og:title", content: "Young DEV - Content Blog" },
     {
       property: "og:description",
       content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",
@@ -80,7 +80,7 @@ useHead({
     { property: "og:image:height", content: "500" },
     { property: "og:image:alt", content: "DevLearning/website " },
     { property: "og:url", content: "https://www.devlearning.dev" },
-    { property: "twitter:title", content: "Dev Learning - Content Blog" },
+    { property: "twitter:title", content: "Young DEV - Content Blog" },
     {
       property: "twitter:description",
       content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",
