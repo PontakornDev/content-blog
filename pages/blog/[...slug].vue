@@ -74,6 +74,7 @@
 
 <script setup>
 import { Icon } from "@iconify/vue";
+import { constants } from "~/utils/constant";
 
 const slug = useRoute().params.slug.toString().replace(/,/g, "/");
 const { data: blog } = await useAsyncData(slug, () =>
@@ -100,7 +101,7 @@ const toc = computed(() => {
 });
 
 const shareFB = () => {
-  const url = `https://devpai.netlify.app/blog${blog._value._path}`;
+  const url = `${constants.DOMAIN}/blog${blog._value._path}`;
   window.open(
     `https://www.facebook.com/sharer/sharer.php?u=${url}`,
     "facebook-share-dialog",
@@ -115,25 +116,25 @@ useHead({
     { name: "description", content: `${blog.value.head.description}` },
     {
       property: "og:title",
-      content: `DEV PAI - ${blog.value.head.title}`,
+      content: `${constants.WEBSITE_NAME} - ${blog.value.head.title}`,
     },
     { property: "og:description", content: `${blog.value.head.description}` },
     { property: "og:locale", content: "th_TH" },
     { property: "og:type", content: "article" },
     {
       property: "og:image",
-      content: `https://devpai.netlify.app/upload/img_blog/${blog.value.head.imgshr}`,
+      content: `${constants.DOMAIN}/${blog.value.head.imgshr}`,
     },
     { property: "og:image:width", content: "700" },
     { property: "og:image:height", content: "495" },
-    { property: "og:image:alt", content: "DEVPAI/article" },
+    { property: "og:image:alt", content: `${constants.NAME}/article` },
     {
       property: "og:url",
-      content: `https://devpai.netlify.app/blog${blog._value._path}`,
+      content: `${constants.DOMAIN}/blog${blog._value._path}`,
     },
     {
       property: "twitter:title",
-      content: `DEV PAI - ${blog.value.head.title}`,
+      content: `${constants.WEBSITE_NAME} - ${blog.value.head.title}`,
     },
     {
       property: "twitter:description",
@@ -143,20 +144,23 @@ useHead({
     { property: "twitter:type", content: "article" },
     {
       property: "twitter:image",
-      content: `https://devpai.netlify.app/upload/img_blog/${blog.value.head.imgshr}`,
+      content: `${constants.DOMAIN}/upload/img_blog/${blog.value.head.imgshr}`,
     },
     { property: "twitter:image:width", content: "700" },
     { property: "twitter:image:height", content: "495" },
-    { property: "twitter:image:alt", content: "DEVPAI/article" },
+    {
+      property: "twitter:image:alt",
+      content: `${constants.WEBSITE_NAME}/article`,
+    },
     {
       property: "twitter:url",
-      content: `https://devpai.netlify.app/blog${blog._value._path}`,
+      content: `${constants.DOMAIN}/blog${blog._value._path}`,
     },
   ],
   link: [
     {
       rel: "canonical",
-      href: `https://devpai.netlify.app/blog${blog._value._path}`,
+      href: `${constants.DOMAIN}/blog${blog._value._path}`,
     },
   ],
 });

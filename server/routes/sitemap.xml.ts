@@ -1,11 +1,12 @@
 import { serverQueryContent } from "#content/server";
 import { SitemapStream, streamToPromise } from "sitemap";
+import { constants } from "~/utils/constant";
 
 export default defineEventHandler(async (event) => {
   // Fetch all documents
   const docs = await serverQueryContent(event).find();
   const sitemap = new SitemapStream({
-    hostname: "https://devpai.netlify.app",
+    hostname: constants.DOMAIN,
   });
 
   for (const doc of docs) {

@@ -5,7 +5,7 @@
         <h1
           class="lg:text-5xl text-2xl leading-normal font-semibold text-center py-4"
         >
-          Check Out Our Latest Blog Posts
+          Latest Blog Posts
         </h1>
         <h2
           class="lg:text-2xl text-xl text-center leading-normal font-bold rainbow-text"
@@ -58,6 +58,8 @@
 </template>
 
 <script setup>
+import { constants } from "~/utils/constant";
+
 const { data: blogNav } = await useAsyncData("navigation", () => {
   return fetchContentNavigation(queryContent("blog"));
 });
@@ -68,7 +70,10 @@ useHead({
       name: "description",
       content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",
     },
-    { property: "og:title", content: "DEV PAI - Content Blog" },
+    {
+      property: "og:title",
+      content: `${constants.WEBSITE_NAME} - Content Blog`,
+    },
     {
       property: "og:description",
       content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",
@@ -77,13 +82,16 @@ useHead({
     { property: "og:type", content: "website" },
     {
       property: "og:image",
-      content: "https://devpai.netlify.app/icon.png",
+      content: `${constants.WEBSITE_NAME}/icon.png`,
     },
     { property: "og:image:width", content: "500" },
     { property: "og:image:height", content: "500" },
-    { property: "og:image:alt", content: "DEVPAI/website " },
-    { property: "og:url", content: "https://devpai.netlify.app" },
-    { property: "twitter:title", content: "DEV PAI - Content Blog" },
+    { property: "og:image:alt", content: `${constants.WEBSITE_NAME}/website` },
+    { property: "og:url", content: `${constants.DOMAIN}` },
+    {
+      property: "twitter:title",
+      content: `${constants.WEBSITE_NAME} - Content Blog`,
+    },
     {
       property: "twitter:description",
       content: "Blog แชร์ประสบการณ์ในการพัฒนาเว็บไซต์ต่างๆ",
@@ -92,13 +100,16 @@ useHead({
     { property: "twitter:type", content: "website" },
     {
       property: "twitter:image",
-      content: "https://devpai.netlify.app/icon.png",
+      content: `${constants.DOMAIN}/icon.png`,
     },
     { property: "twitter:image:width", content: "500" },
     { property: "twitter:image:height", content: "500" },
-    { property: "twitter:image:alt", content: "DEVPAI/website " },
-    { property: "twitter:url", content: "https://devpai.netlify.app" },
+    {
+      property: "twitter:image:alt",
+      content: `${constants.WEBSITE_NAME}/website`,
+    },
+    { property: "twitter:url", content: `${constants.DOMAIN}` },
   ],
-  link: [{ rel: "canonical", href: "https://devpai.netlify.app" }],
+  link: [{ rel: "canonical", href: `${constants.DOMAIN}` }],
 });
 </script>

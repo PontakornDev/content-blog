@@ -1,12 +1,9 @@
 <template>
   <header
-    class="flex sticky z-10 top-0 items-center justify-between h-20 w-full px-[5%] lg:px-[15%] bg-blue-500"
+    class="flex sticky z-10 top-0 items-center justify-between h-20 w-full px-[5%] bg-blue-500"
   >
     <NuxtLink to="/" class="font-bold inline text-xl md:text-4xl">
       <img class="image-logo" src="/logo.png" />
-      <!-- <span class="text-primary">D</span>
-      <span>EV </span>
-      <span class="text-amber-600">P</span>AI -->
     </NuxtLink>
     <nav class="flex items-center space-x-7 text-gray-600">
       <div v-for="(n, i) in links" :key="`navLink-${i}`">

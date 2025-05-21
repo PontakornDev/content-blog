@@ -9,7 +9,7 @@
 export default defineComponent({
   setup() {
     useHead({
-      titleTemplate: (title: string) => `DEV PAI - ${title}`,
+      titleTemplate: (title?: string) => `DEV PAI - ${title}`,
       title: "",
       meta: [
         { name: "description", content: "" },
