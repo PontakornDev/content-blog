@@ -12,6 +12,16 @@ export default defineNuxtConfig({
     },
     highlight: {
       theme: "dracula-soft",
+      langs: [
+        "go",
+        "javascript",
+        "typescript",
+        "json",
+        "yaml",
+        "bash",
+        "shell",
+        "html",
+      ],
     },
   },
   ssr: true,
