@@ -2,16 +2,16 @@
   <div>
     <main>
       <div class="lg:space-x-10 px-[5%] lg:px-[10%] pt-10">
-        <div class="flex w-full border-b-2 border-gray-400">
+        <div v-if="blog" class="flex w-full border-b-2 border-gray-400">
           <Icon icon="mdi:calendar-range" width="24" height="24" />
-          <p>เขียนเมื่อวันที่: {{ blog.head.createAt }}</p>
+          <p>เขียนเมื่อวันที่: {{ blog.head?.createAt || "ไม่ระบุ" }}</p>
           <Icon
             class="ml-2 md:ml-5"
             icon="mdi:face-man-shimmer"
             width="24"
             height="24"
           />
-          <p>ผู้เขียน: {{ blog.head.writer }}</p>
+          <p>ผู้เขียน: {{ blog.head?.writer || "ไม่ระบุ" }}</p>
           <button
             class="bg-blue-500 px-4 py-2 font-semibold text-white inline-flex items-center space-x-2 rounded fixed right-5 bottom-2 z-10"
             v-on:click="shareFB()"
@@ -34,7 +34,7 @@
         class="lg:pt-20 md:pt-12 pt-10 flex items-start lg:space-x-10 px-[5%] lg:px-[10%]"
       >
         <div
-          v-if="blog.excerpt"
+          v-if="blog && blog.body"
           class="w-[300px] p-5 sticky top-20 border rounded-md bg-white hidden lg:block"
         >
           <h2
@@ -57,16 +57,18 @@
             </li>
           </ul>
         </div>
-        <ClientOnly>
-          <ContentRenderer
-            class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link max-w-sm md:max-w-none prose-pre:whitespace-normal"
-            :value="blog"
-          >
-            <template #empty>
-              <p>No content found.</p>
-            </template>
-          </ContentRenderer>
-        </ClientOnly>
+        <ContentRenderer
+          v-if="blog"
+          class="prose lg:prose-base prose-md prose-p:font-medium prose-p:text-lg prose-slate blog-link max-w-sm md:max-w-none prose-pre:whitespace-normal"
+          :value="blog"
+        >
+          <template #empty>
+            <p>No content found.</p>
+          </template>
+        </ContentRenderer>
+        <div v-else class="flex items-center justify-center min-h-[400px]">
+          <p class="text-gray-500 text-lg">Loading article...</p>
+        </div>
       </article>
     </main>
   </div>
@@ -77,26 +79,42 @@ import { Icon } from "@iconify/vue";
 import { constants } from "~/utils/constant";
 
 const slug = useRoute().params.slug.toString().replace(/,/g, "/");
-const { data: blog } = await useAsyncData(slug, () =>
+const { data: blog, error } = await useAsyncData(slug, () =>
   queryContent(slug).findOne()
 );
 
+// Handle error case
+if (error.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Article not found",
+  });
+}
+
 const toc = computed(() => {
-  if (!blog.value) return [];
-  const items = blog.value.excerpt?.children;
+  if (!blog.value || !blog.value.body) return [];
+  const items = blog.value.body.children;
 
   if (!items) return [];
   const toc = [];
   const tags = ["h2", "h3", "h4", "h5", "h6"];
-  items.forEach((item) => {
-    if (tags.includes(item.tag)) {
-      toc.push({
-        id: item.props.id,
-        title: item.props.id.toString().replace(/-/g, " "),
-        depth: Number(item.tag.replace(/h/g, "")),
-      });
-    }
-  });
+
+  const findHeadings = (nodes) => {
+    nodes.forEach((item) => {
+      if (tags.includes(item.tag)) {
+        toc.push({
+          id: item.props?.id || "",
+          title: item.props?.id?.toString().replace(/-/g, " ") || "",
+          depth: Number(item.tag.replace(/h/g, "")),
+        });
+      }
+      if (item.children) {
+        findHeadings(item.children);
+      }
+    });
+  };
+
+  findHeadings(items);
   return toc;
 });
 
@@ -110,59 +128,74 @@ const shareFB = () => {
   return false;
 };
 
-useHead({
-  title: `${blog.value.head.title}`,
-  meta: [
-    { name: "description", content: `${blog.value.head.description}` },
-    {
-      property: "og:title",
-      content: `${constants.WEBSITE_NAME} - ${blog.value.head.title}`,
-    },
-    { property: "og:description", content: `${blog.value.head.description}` },
-    { property: "og:locale", content: "th_TH" },
-    { property: "og:type", content: "article" },
-    {
-      property: "og:image",
-      content: `${constants.DOMAIN}/${blog.value.head.imgshr}`,
-    },
-    { property: "og:image:width", content: "700" },
-    { property: "og:image:height", content: "495" },
-    { property: "og:image:alt", content: `${constants.NAME}/article` },
-    {
-      property: "og:url",
-      content: `${constants.DOMAIN}/blog${blog._value._path}`,
-    },
-    {
-      property: "twitter:title",
-      content: `${constants.WEBSITE_NAME} - ${blog.value.head.title}`,
-    },
-    {
-      property: "twitter:description",
-      content: `${blog.value.head.description}`,
-    },
-    { property: "twitter:locale", content: "th_TH" },
-    { property: "twitter:type", content: "article" },
-    {
-      property: "twitter:image",
-      content: `${constants.DOMAIN}/upload/img_blog/${blog.value.head.imgshr}`,
-    },
-    { property: "twitter:image:width", content: "700" },
-    { property: "twitter:image:height", content: "495" },
-    {
-      property: "twitter:image:alt",
-      content: `${constants.WEBSITE_NAME}/article`,
-    },
-    {
-      property: "twitter:url",
-      content: `${constants.DOMAIN}/blog${blog._value._path}`,
-    },
-  ],
-  link: [
-    {
-      rel: "canonical",
-      href: `${constants.DOMAIN}/blog${blog._value._path}`,
-    },
-  ],
+useHead(() => {
+  if (!blog.value) return {};
+
+  return {
+    title: `${blog.value.head?.title || "Article"}`,
+    meta: [
+      { name: "description", content: `${blog.value.head?.description || ""}` },
+      {
+        property: "og:title",
+        content: `${constants.WEBSITE_NAME} - ${
+          blog.value.head?.title || "Article"
+        }`,
+      },
+      {
+        property: "og:description",
+        content: `${blog.value.head?.description || ""}`,
+      },
+      { property: "og:locale", content: "th_TH" },
+      { property: "og:type", content: "article" },
+      {
+        property: "og:image",
+        content: `${constants.DOMAIN}/upload/img_blog/${
+          blog.value.head?.imgshr || "default.png"
+        }`,
+      },
+      { property: "og:image:width", content: "700" },
+      { property: "og:image:height", content: "495" },
+      { property: "og:image:alt", content: `${constants.NAME}/article` },
+      {
+        property: "og:url",
+        content: `${constants.DOMAIN}/blog${blog.value._path || ""}`,
+      },
+      {
+        property: "twitter:title",
+        content: `${constants.WEBSITE_NAME} - ${
+          blog.value.head?.title || "Article"
+        }`,
+      },
+      {
+        property: "twitter:description",
+        content: `${blog.value.head?.description || ""}`,
+      },
+      { property: "twitter:locale", content: "th_TH" },
+      { property: "twitter:type", content: "article" },
+      {
+        property: "twitter:image",
+        content: `${constants.DOMAIN}/upload/img_blog/${
+          blog.value.head?.imgshr || "default.png"
+        }`,
+      },
+      { property: "twitter:image:width", content: "700" },
+      { property: "twitter:image:height", content: "495" },
+      {
+        property: "twitter:image:alt",
+        content: `${constants.WEBSITE_NAME}/article`,
+      },
+      {
+        property: "twitter:url",
+        content: `${constants.DOMAIN}/blog${blog.value._path || ""}`,
+      },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: `${constants.DOMAIN}/blog${blog.value._path || ""}`,
+      },
+    ],
+  };
 });
 </script>
 
