@@ -2,7 +2,7 @@
 using Nuxt Content Look at the [Content documentation](https://content.nuxtjs.org/) to learn more.
 
 Website
-[DEV PAI](https://dev-learning.netlify.app/)
+[CodeUp](https://dev-learning.netlify.app/)
 ## Setup
 
 Make sure to install the dependencies:
